@@ -1,26 +1,28 @@
 import 'reflect-metadata';
 
-import {INestApplication} from '@nestjs/common';
 import {NestFactory} from '@nestjs/core';
+import serverlessExpress from '@vendia/serverless-express';
+import {Callback, Context, Handler} from 'aws-lambda';
 
 import {ApiBootstrap} from './application/api/api-bootstrap';
 
-('use strict');
+let server: Handler;
 
-interface Server {
-  app: INestApplication;
-  port: number;
-}
-
-export const server = async (): Promise<Server> => {
+async function bootstrap() {
   const app = await NestFactory.create(ApiBootstrap);
 
-  return {app, port: 3000};
+  await app.init();
+
+  return serverlessExpress({
+    app: app.getHttpAdapter().getInstance(),
+  }).handler;
+}
+
+export const handler: Handler = async (
+  event: unknown,
+  context: Context,
+  callback: Callback
+) => {
+  server = server ?? (await bootstrap());
+  return server(event, context, callback);
 };
-
-server().then((server: Server) => {
-  const app = server.app;
-  const port = server.port;
-
-  return app.listen(port);
-});

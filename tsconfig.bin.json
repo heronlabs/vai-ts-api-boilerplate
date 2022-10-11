@@ -4,5 +4,6 @@
   "exclude": ["tests"],
   "compilerOptions": {
     "rootDir": "./src",
+    "esModuleInterop": true
   }
 }

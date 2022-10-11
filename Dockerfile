@@ -1,11 +1,10 @@
-FROM node:14.18.2-alpine3.12
+FROM public.ecr.aws/lambda/nodejs:14
 
-WORKDIR /app
+COPY . ${LAMBDA_TASK_ROOT}
 
-COPY . .
+RUN npm i -g yarn \
+  && yarn install --frozen-lockfile \
+  && yarn cache clean \
+  && yarn compile
 
-RUN yarn install --frozen-lockfile && yarn compile
-
-EXPOSE 3000
-
-CMD ["yarn", "api:start"]
+CMD [ "bin/entry-point.handler" ]
