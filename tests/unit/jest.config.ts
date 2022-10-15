@@ -7,7 +7,7 @@ const config: Config.InitialOptions = {
   collectCoverageFrom: [
     '<rootDir>/src/**/*-controller.ts',
     '<rootDir>/src/**/*-presenter.ts',
-    '<rootDir>/src/**/*-services.ts',
+    '<rootDir>/src/**/*-service.ts',
   ],
   coverageDirectory: 'coverage/unit',
   testMatch: ['<rootDir>/tests/unit/**/*.spec.ts'],
