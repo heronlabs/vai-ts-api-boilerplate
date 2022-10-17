@@ -1,4 +1,4 @@
-# vai-ts-boilerplate-api
+# vai-ts-api-boilerplate
 
 API boilerplate for Typescript.
 

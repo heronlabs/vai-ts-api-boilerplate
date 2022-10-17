@@ -2,6 +2,7 @@
   "name": "my-project",
   "version": "0.0.1",
   "description": "Project created to serve as a boilerplate for api projects.",
+  "license": "MIT",
   "engines": {
     "node": ">=14.17.6"
   },
