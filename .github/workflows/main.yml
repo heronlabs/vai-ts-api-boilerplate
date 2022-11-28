@@ -1,4 +1,4 @@
-name: Build Node Stack
+name: Build API Stack
 
 on:
   - push
@@ -14,10 +14,10 @@ jobs:
       - name: Checkout action repository
         uses: actions/checkout@v3
         with:
-          repository: heronlabs/build-node-action
-          ref: 1.0.1
+          repository: heronlabs/build-api-action
+          ref: 1.1.0
           token: ${{ secrets.AUTHOR_PERSONAL_ACCESS}}
-          path: ./build-node-action
+          path: ./build-api-action
 
       - name: Run action
-        uses: './build-node-action/application/github'
+        uses: './build-api-action/application/github'
