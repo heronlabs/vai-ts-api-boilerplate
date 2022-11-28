@@ -1,5 +1,5 @@
 import {HealthCheckController} from '../../../../../src/application/api/controllers/health-check/health-check-controller';
-import {JsonPresenterMock} from '../../../__mocks__/json-presenter-mock';
+import {JsonPresenterMock} from '../../../__mocks__/presenters/json-presenter-mock';
 
 describe('Given controller for health check', () => {
   let controller: HealthCheckController;
@@ -14,7 +14,7 @@ describe('Given controller for health check', () => {
 
       const response = controller.status();
 
-      expect(response.payload).toBe('OK');
+      expect(response.payload).toBeTruthy();
     });
   });
 });

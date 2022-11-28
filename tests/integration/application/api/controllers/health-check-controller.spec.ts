@@ -15,7 +15,7 @@ describe('Given controller for health check', () => {
     it('Should get OK', () => {
       const response = controller.status();
 
-      expect(response.payload).toBe('OK');
+      expect(response.payload).toBeTruthy();
     });
   });
 });

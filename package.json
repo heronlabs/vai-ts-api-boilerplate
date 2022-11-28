@@ -14,8 +14,8 @@
     "test:unit": "yarn test --config=tests/unit/jest.config.ts",
     "test:integration": "yarn test --config=tests/integration/jest.config.ts",
     "test:e2e": "yarn test --config=tests/e2e/jest.config.ts",
-    "api:start": "node bin/entry-point.js",
-    "docker:build": "docker build -t my-project:latest .",
+    "api:start": "node bin/application/api/entry-point.js",
+    "docker:build": "docker build -t my-project:latest . -f Dockerfile.local",
     "docker:up:my-project": "docker-compose up --build -d my-project",
     "docker:down": "docker-compose down --rmi all"
   },
@@ -28,6 +28,7 @@
     "@types/node": "^18.8.2",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "dotenv": "^16.0.3",
     "eslint": "^8.24.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -42,6 +43,7 @@
     "typescript": "4.4.3"
   },
   "dependencies": {
+    "@heronlabs/env": "^2.0.2",
     "@nestjs/common": "^9.1.4",
     "@nestjs/core": "^9.1.4",
     "@nestjs/platform-express": "^9.1.4",
