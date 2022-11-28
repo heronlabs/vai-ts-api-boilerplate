@@ -28,7 +28,6 @@
     "@types/node": "^18.8.2",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
-    "dotenv": "^16.0.3",
     "eslint": "^8.24.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -52,6 +51,7 @@
     "aws-lambda": "^1.0.7",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
+    "dotenv": "^16.0.3",
     "lodash": "^4.17.21",
     "reflect-metadata": "^0.1.13"
   },
