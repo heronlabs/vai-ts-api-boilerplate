@@ -1,4 +1,4 @@
-import {Environment, TextEnvPresenter} from '@heronlabs/env';
+import {Environment, TextEnvPresenter} from '@heronlabs/presenter-env';
 import {Inject} from '@nestjs/common';
 
 import {EnvironmentConfiguration} from './interfaces/environment-configuration';
