@@ -13,9 +13,9 @@
     "test": "jest --runInBand --colors",
     "test:unit": "yarn test --config=tests/unit/jest.config.ts",
     "test:integration": "yarn test --config=tests/integration/jest.config.ts",
-    "test:e2e": "yarn test --config=tests/e2e/jest.config.ts",
     "api:start": "node bin/application/api/entry-point.js",
-    "docker:build": "docker build -t api:latest . -f Dockerfile.local",
+    "docker:build:local": "docker build -t my-project-local:latest . -f Dockerfile.local",
+    "docker:build:api": "docker build -t my-project-api:latest . -f Dockerfile.api",
     "docker:up:api": "docker-compose up --build -d api",
     "docker:down": "docker-compose down --rmi all"
   },
