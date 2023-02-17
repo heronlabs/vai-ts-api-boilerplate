@@ -1,11 +1,18 @@
 version: '3.8'
 services:
-  api:
-    container_name: api
+  ms-api:
+    container_name: ms-api
     build:
       context: .
       dockerfile: ./Dockerfile.local
     ports:
-      - '3000:3000'
+      - '2222:3000'
     environment:
       CORS_ORIGIN: "*"
+    networks:
+      - ms-network
+
+networks:
+  ms-network:
+    name: MS
+    driver: bridge

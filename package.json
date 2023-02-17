@@ -16,7 +16,7 @@
     "api:start": "node bin/application/api/entry-point.js",
     "docker:build:local": "docker build -t my-project-local:latest . -f Dockerfile.local",
     "docker:build:api": "docker build -t my-project-api:latest . -f Dockerfile.api",
-    "docker:up:api": "docker-compose up --build -d api",
+    "docker:up:api": "docker-compose up --build -d ms-api",
     "docker:down": "docker-compose down --rmi all"
   },
   "devDependencies": {
