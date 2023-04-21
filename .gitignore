@@ -30,6 +30,3 @@ bin/
 
 # OSX
 .DS_Store
-
-# Registry Credentials
-.npmrc
