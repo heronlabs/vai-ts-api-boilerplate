@@ -1,12 +1,19 @@
 import {Environment, TextEnvPresenter} from '@heronlabs/presenter-env';
 import {Inject} from '@nestjs/common';
 
-import {EnvironmentConfiguration} from './interfaces/environment-configuration';
+import {
+  Config,
+  EnvironmentConfiguration,
+} from './interfaces/environment-configuration';
 
 export class Configuration implements EnvironmentConfiguration {
-  public cors = {
-    origin: this.textEnvPresenter.getValueByKey('CORS_ORIGIN'),
-  };
+  async getConfig(): Promise<Config> {
+    return {
+      cors: {
+        origin: await this.textEnvPresenter.getValueByKey('CORS_ORIGIN'),
+      },
+    };
+  }
 
   constructor(
     @Inject(TextEnvPresenter)

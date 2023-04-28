@@ -12,8 +12,8 @@ describe('Given controller for health check', () => {
   });
 
   describe('Given status route', () => {
-    it('Should get OK', () => {
-      const response = controller.status();
+    it('Should get OK', async () => {
+      const response = await controller.status();
 
       expect(response.payload).toBeTruthy();
     });
