@@ -13,7 +13,7 @@
     "test": "jest --runInBand --colors",
     "test:unit": "yarn test --config=tests/unit/jest.config.ts",
     "test:integration": "yarn test --config=tests/integration/jest.config.ts",
-    "api:start": "node bin/application/api/entry-point.js",
+    "api:start": "node bin/application/api/entry-point-local.js",
     "docker:build:local": "docker build -t my-project-local:latest . -f Dockerfile.local",
     "docker:build:api": "docker build -t my-project-api:latest . -f Dockerfile.api",
     "docker:up:api": "docker-compose up --build -d ms-api",
